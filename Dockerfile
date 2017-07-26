@@ -1,4 +1,4 @@
-FROM linuxserver/sonarr
+FROM linuxserver/radarr
 
 RUN \
   apt-get update && \
