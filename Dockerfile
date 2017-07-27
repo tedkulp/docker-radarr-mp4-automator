@@ -10,7 +10,7 @@ RUN \
   pip install babelfish && \
   pip install 'guessit<2' && \
   pip install 'subliminal<2' && \
-  pip install stevedore && \
+  pip install stevedore==1.19.1 && \
   pip install python-dateutil && \
   pip install qtfaststart && \
   git clone git://github.com/mdhiggins/sickbeard_mp4_automator.git /sickbeard_mp4_automator/ && \ 
