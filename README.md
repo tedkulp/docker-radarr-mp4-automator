@@ -1,4 +1,4 @@
-# aront/radarr
+# tedkulp/radarr
 A docker container based on linuxserver/radarr with mp4 automation baked in
 
 ## Usage
@@ -13,7 +13,7 @@ docker create \
     -v <path to data>/mp4_automator:/config_mp4_automator \
     -v <path to data>:/movies \
     -v <path to data>:/downloads \
-    aront/radarr
+    tedkulp/radarr
     
 mkdir <path to data>/mp4_automator && \
 wget https://raw.githubusercontent.com/mdhiggins/sickbeard_mp4_automator/master/autoProcess.ini.sample -O <path to data>/mp4_automator/autoProcess.ini
