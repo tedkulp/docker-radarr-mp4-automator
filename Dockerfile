@@ -1,5 +1,8 @@
 FROM linuxserver/radarr
 
+# Add sources
+RUN sed -i -- 's/#deb-src/deb-src/g' /etc/apt/sources.list && sed -i -- 's/# deb-src/deb-src/g' /etc/apt/sources.list
+
 RUN \
   apt-get update && \
   apt-get install -y \
@@ -12,7 +15,9 @@ RUN \
   libssl-dev \
   libxml2-dev \
   libxslt1-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  libfdk-aac-dev \
+  build-essential
 
 RUN \
   pip install --upgrade pip && \
@@ -31,8 +36,11 @@ RUN \
   ln -s /downloads /data && \
   ln -s /config_mp4_automator/autoProcess.ini /sickbeard_mp4_automator/autoProcess.ini && \
   rm -rf \
-	/tmp/* \
-	/var/lib/apt/lists/* \
-	/var/tmp/*
+  /tmp/* \
+  /var/lib/apt/lists/* \
+  /var/tmp/*
+
+COPY build_ffmpeg.sh /build_ffmpeg.sh
+RUN /bin/sh build_ffmpeg.sh
 
 VOLUME config_mp4_automator
