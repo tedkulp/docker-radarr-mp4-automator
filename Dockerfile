@@ -43,4 +43,4 @@ RUN \
 COPY build_ffmpeg.sh /build_ffmpeg.sh
 RUN /bin/sh build_ffmpeg.sh
 
-VOLUME config_mp4_automator
+VOLUME /config_mp4_automator
