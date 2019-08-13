@@ -1,0 +1,16 @@
+diff --git a/debian/rules b/debian/rules
+index 7b2f8e77..c298ce3e 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -102,7 +102,10 @@ CONFIG := --prefix=/usr \
+ 	--enable-omx \
+ 	--enable-openal \
+ 	--enable-opengl \
+-	--enable-sdl2
++	--enable-sdl2 \
++	--enable-nonfree \
++	--enable-nvenc \
++	--enable-libfdk-aac
+ 
+ # The standard configuration only uses the shared CONFIG.
+ CONFIG_standard = --enable-shared

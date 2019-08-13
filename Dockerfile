@@ -20,7 +20,6 @@ RUN \
   build-essential
 
 RUN \
-  # pip install --upgrade pip && \
   pip install requests && \
   pip install requests[security] && \
   pip install requests-cache && \
@@ -40,6 +39,7 @@ RUN \
   /var/lib/apt/lists/* \
   /var/tmp/*
 
+COPY rules.patch /rules.patch
 COPY build_ffmpeg.sh /build_ffmpeg.sh
 RUN /bin/sh build_ffmpeg.sh
 
